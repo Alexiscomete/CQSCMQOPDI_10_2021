@@ -5,11 +5,14 @@ public class ChooseCard : MonoBehaviour
     private static string[] colors = {"Blue", "Yellow", "Red", "Green"};
     private static string[] values = {"0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Draw", "Reverse", "Skip"};
 
-    public Sprite sprite;
+    public SpriteRenderer spriteR;
+
+    private static Sprite[] sprites;
     
     // Start is called before the first frame update
     void Start()
     {
+        sprites = Resources.LoadAll<Sprite>("./cards/");
         System.Random ran = new System.Random();
         if (ran.Next(10)==3)
         {
@@ -18,7 +21,7 @@ public class ChooseCard : MonoBehaviour
         else
         {
             string card = colors[ran.Next(colors.Length)] + "_" + values[ran.Next(values.Length)];
-
+            SetSpriteByName(card);
         }
     }
 
@@ -26,5 +29,19 @@ public class ChooseCard : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void SetSpriteByName(string name)
+    {
+        bool bou = true;
+        int i = 0;
+        while (bou && i < sprites.Length)
+        {
+            if (sprites[i].name == name)
+            {
+                spriteR.sprite = sprites[i];
+            }
+            i += 1;
+        }
     }
 }
