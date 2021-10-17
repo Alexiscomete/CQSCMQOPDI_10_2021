@@ -35,6 +35,6 @@ public class ChooseCard : MonoBehaviour
     {
         Debug.Log(name);
         spriteR.sprite = Resources.Load<Sprite>(name);
-        //Resources.UnloadUnusedAssets();
+        Resources.UnloadUnusedAssets();
     }
 }
