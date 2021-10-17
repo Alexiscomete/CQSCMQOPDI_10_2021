@@ -7,12 +7,12 @@ public class ChooseCard : MonoBehaviour
 
     public SpriteRenderer spriteR;
 
-    private static Sprite[] sprites;
+    //private static Sprite[] sprites;
     
     // Start is called before the first frame update
     void Start()
     {
-        sprites = Resources.LoadAll<Sprite>("./cards/");
+        //sprites = Resources.LoadAll<Sprite>("./cards/");
         System.Random ran = new System.Random();
         if (ran.Next(10)==3)
         {
@@ -33,15 +33,8 @@ public class ChooseCard : MonoBehaviour
 
     void SetSpriteByName(string name)
     {
-        bool bou = true;
-        int i = 0;
-        while (bou && i < sprites.Length)
-        {
-            if (sprites[i].name == name)
-            {
-                spriteR.sprite = sprites[i];
-            }
-            i += 1;
-        }
+        Debug.Log(name);
+        spriteR.sprite = Resources.Load<Sprite>(name);
+        //Resources.UnloadUnusedAssets();
     }
 }
