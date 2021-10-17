@@ -14,9 +14,14 @@ public class ChooseCard : MonoBehaviour
     {
         //sprites = Resources.LoadAll<Sprite>("./cards/");
         System.Random ran = new System.Random();
-        if (ran.Next(10)==3)
+        int n = ran.Next(12);
+        if (n == 3)
         {
-
+            SetSpriteByName("Wild_Draw");
+        }
+        else if (n == 4 || n == 6)
+        {
+            SetSpriteByName("Wild");
         }
         else
         {
