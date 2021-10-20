@@ -1,27 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     bool up = false, down = false, right = false, left = false;
+    public Transform rb;
+    public float force;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             up = true;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             down = true;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             right = true;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             left = true;
         }
@@ -29,6 +29,25 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        if (up)
+        {
+            rb.Translate(new Vector2(0f, force) * Time.fixedDeltaTime);
+            up = false;
+        }
+        if (down)
+        {
+            rb.Translate(new Vector2(0f, -force) * Time.fixedDeltaTime);
+            down = false;
+        }
+        if (right)
+        {
+            rb.Translate(new Vector2(force, 0f) * Time.fixedDeltaTime);
+            right = false;
+        }
+        if (left)
+        {
+            rb.Translate(new Vector2(-force, 0f) * Time.fixedDeltaTime);
+            left = false;
+        }
     }
 }
