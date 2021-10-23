@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5705389883315342980}
   - component: {fileID: 1422704455443993130}
+  - component: {fileID: 935219566813534590}
   m_Layer: 0
   m_Name: Rentity
   m_TagString: Untagged
@@ -53,7 +54,25 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &935219566813534590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272615009888476897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f6f22a4d778df41b5318d52e2168c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reeNum: 0
+  baseR: {fileID: 0}
+  force: 1
+  deckR: {fileID: 0}
+  deckL: {fileID: 0}
+  cardModel: {fileID: 8180998486358789624, guid: 9217ea4aa271d7b43ba0f05547609993, type: 3}
 --- !u!1 &3781473902035102751
 GameObject:
   m_ObjectHideFlags: 0

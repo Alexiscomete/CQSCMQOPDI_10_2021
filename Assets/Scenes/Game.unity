@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0.9803922
       objectReference: {fileID: 0}
+    - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: deckNum
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
 --- !u!4 &25760379 stripped
@@ -295,6 +299,10 @@ PrefabInstance:
     - target: {fileID: 4538818762990115369, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: m_Color.g
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: deckNum
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
@@ -396,6 +404,22 @@ PrefabInstance:
     - target: {fileID: 272615009888476897, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
       propertyPath: m_Name
       value: Rentity
+      objectReference: {fileID: 0}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: baseR
+      value: 
+      objectReference: {fileID: 2016095885}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: deckL
+      value: 
+      objectReference: {fileID: 1627442510}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: deckR
+      value: 
+      objectReference: {fileID: 1305574734}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: reeNum
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5705389883315342980, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
       propertyPath: m_RootOrder
@@ -959,7 +983,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckNum: 0
-  ga: []
   fc: []
 --- !u!1 &1305574734
 GameObject:
@@ -972,7 +995,7 @@ GameObject:
   - component: {fileID: 1305574735}
   - component: {fileID: 1305574736}
   m_Layer: 0
-  m_Name: Deck (1)
+  m_Name: DeckR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1053,6 +1076,22 @@ PrefabInstance:
     - target: {fileID: 272615009888476897, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
       propertyPath: m_Name
       value: Rentity
+      objectReference: {fileID: 0}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: baseR
+      value: 
+      objectReference: {fileID: 1156139991}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: deckL
+      value: 
+      objectReference: {fileID: 1627442510}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: deckR
+      value: 
+      objectReference: {fileID: 1305574734}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: reeNum
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5705389883315342980, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
       propertyPath: m_RootOrder
@@ -1147,6 +1186,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rentity
       objectReference: {fileID: 0}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: baseR
+      value: 
+      objectReference: {fileID: 1444805686}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: deckL
+      value: 
+      objectReference: {fileID: 1627442510}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: deckR
+      value: 
+      objectReference: {fileID: 1305574734}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: reeNum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5705389883315342980, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1209,7 +1264,7 @@ GameObject:
   - component: {fileID: 1627442511}
   - component: {fileID: 1627442512}
   m_Layer: 0
-  m_Name: Deck
+  m_Name: DeckL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1646,6 +1701,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: deckNum
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
 --- !u!4 &2787518650351004020 stripped
@@ -1663,6 +1722,22 @@ PrefabInstance:
     - target: {fileID: 272615009888476897, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
       propertyPath: m_Name
       value: Entity
+      objectReference: {fileID: 0}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: baseR
+      value: 
+      objectReference: {fileID: 804616540}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: deckL
+      value: 
+      objectReference: {fileID: 1627442510}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: deckR
+      value: 
+      objectReference: {fileID: 1305574734}
+    - target: {fileID: 935219566813534590, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
+      propertyPath: reeNum
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5705389883315342980, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
       propertyPath: m_RootOrder
@@ -1715,26 +1790,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5705389883315342980, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
   m_PrefabInstance: {fileID: 3853161345714182959}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3853161345714182961 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 272615009888476897, guid: ed595aaa05fb6c94eb2e74bc805b2515, type: 3}
-  m_PrefabInstance: {fileID: 3853161345714182959}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3853161345714182962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3853161345714182961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f6f22a4d778df41b5318d52e2168c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reeNum: 0
-  deckR: {fileID: 0}
-  deckL: {fileID: 0}
 --- !u!1001 &8180998486659724969
 PrefabInstance:
   m_ObjectHideFlags: 0

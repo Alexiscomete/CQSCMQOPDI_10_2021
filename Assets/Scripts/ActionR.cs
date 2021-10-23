@@ -8,40 +8,110 @@ public class ActionR : MonoBehaviour
     public static int[] tasks = {7, 7, 7, 7};
     public static int right = -1, left = -1;
     public GameObject deckR, deckL;
+    FollowCard card = null;
+    public GameObject cardModel;
+    bool getCard = false, pos = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (tasks[reeNum] > 0)
+        if (getCard)
         {
-            if (reeNum < 2)
+            if (pos)
             {
-                if (left == -1)
+                card = FollowCard.lastCardLeft;
+                FollowCard.lastCardLeft = null;
+                card.follow = gameObject;
+                left = -1;
+                getCard = false;
+            }
+            else
+            {
+                card = FollowCard.lastCardRight;
+                FollowCard.lastCardRight = null;
+                card.follow = gameObject;
+                right = -1;
+                getCard = false;
+            }
+        }
+        else if (card == null)
+        {
+            if (tasks[reeNum] > 0)
+            {
+                if (reeNum < 2)
                 {
-                    left = reeNum;
-                }
-                else if (reeNum == left)
-                {
-
+                    if (left == -1)
+                    {
+                        left = reeNum;
+                        GoTo(deckL.transform);
+                    }
+                    else if (reeNum == left)
+                    {
+                        GoTo(deckL.transform);
+                        if (Distance(deckL.transform.position) < 0.5)
+                        {
+                            Instantiate(cardModel, deckL.transform.position, Quaternion.identity);
+                            getCard = true;
+                            pos = true;
+                        }
+                    }
+                    else
+                    {
+                        GoToBase();
+                    }
                 }
                 else
                 {
-                    GoToBase();
+                    if (right == -1)
+                    {
+                        right = reeNum;
+                        GoTo(deckR.transform);
+                    }
+                    else if (reeNum == right)
+                    {
+                        GoTo(deckR.transform);
+                        if (Distance(deckR.transform.position) < 0.5)
+                        {
+                            Instantiate(cardModel, deckR.transform.position, Quaternion.identity);
+                            getCard = true;
+                            pos = false;
+                        }
+                    }
+                    else
+                    {
+                        GoToBase();
+                    }
                 }
             }
             else
             {
-
+                GoToBase();
             }
         }
         else
         {
-            GoToBase();
+            GoTo(Deck.decks[reeNum].transform);
+            if (Distance(Deck.decks[reeNum].transform.position) < 0.5)
+            {
+                Deck.decks[reeNum].AddCard(card);
+                card = null;
+                tasks[reeNum]--;
+            }
         }
     }
 
     void GoToBase()
     {
         transform.Translate((baseR.transform.position - transform.position).normalized * force * Time.fixedDeltaTime);
+    }
+
+    void GoTo(Transform tra)
+    {
+        transform.Translate((tra.position - transform.position).normalized * force * Time.fixedDeltaTime);
+    }
+
+    float Distance(Vector2 vec)
+    {
+        return Mathf.Sqrt(Mathf.Pow(vec.x - transform.position.x, 2) + Mathf.Pow(vec.y - transform.position.y, 2));
     }
 }

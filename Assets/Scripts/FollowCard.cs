@@ -9,7 +9,7 @@ public class FollowCard : MonoBehaviour
     public Vector3 velocity;
     void Start()
     {
-        if (transform.position.x == 1.61)
+        if (transform.position.x > 0)
         {
             lastCardRight = this;
         }
