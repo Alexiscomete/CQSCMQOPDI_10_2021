@@ -14,11 +14,34 @@ public class ActionR : MonoBehaviour
     {
         if (tasks[reeNum] > 0)
         {
+            if (reeNum < 2)
+            {
+                if (left == -1)
+                {
+                    left = reeNum;
+                }
+                else if (reeNum == left)
+                {
 
+                }
+                else
+                {
+                    GoToBase();
+                }
+            }
+            else
+            {
+
+            }
         }
         else
         {
-            transform.Translate((baseR.transform.position - transform.position) * force * Time.fixedDeltaTime);
+            GoToBase();
         }
+    }
+
+    void GoToBase()
+    {
+        transform.Translate((baseR.transform.position - transform.position).normalized * force * Time.fixedDeltaTime);
     }
 }
