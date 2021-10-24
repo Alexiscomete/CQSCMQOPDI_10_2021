@@ -22,4 +22,16 @@ public class Deck : MonoBehaviour
         fc.follow = null;
         this.fc.Add(fc);
     }
+
+    public void SetPosCards()
+    {
+        foreach (FollowCard r in fc)
+        {
+            r.follow = gameObject;
+            if (deckNum == 0)
+            {
+                r.SetFace(true);
+            }
+        }
+    }
 }

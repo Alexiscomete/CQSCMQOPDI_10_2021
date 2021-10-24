@@ -7,8 +7,13 @@ public class FollowCard : MonoBehaviour
     public GameObject follow = null;
     public float timeOffSet;
     public Vector3 velocity;
+    public bool face = false;
+    public SpriteRenderer spFront;
+    public SpriteRenderer spBack;
+
     void Start()
     {
+        SetFace(false);
         if (transform.position.x > 0)
         {
             lastCardRight = this;
@@ -25,6 +30,21 @@ public class FollowCard : MonoBehaviour
         if (follow != null)
         {
             transform.position = Vector3.SmoothDamp(transform.position, follow.transform.position, ref velocity, timeOffSet);
+        }
+    }
+
+    public void SetFace(bool face)
+    {
+        this.face = face;
+        if (face)
+        {
+            spFront.color = new Color(255, 255, 255, 255);
+            spBack.color = new Color(255, 255, 255, 0);
+        }
+        else
+        {
+            spFront.color = new Color(255, 255, 255, 0);
+            spBack.color = new Color(255, 255, 255, 255);
         }
     }
 }

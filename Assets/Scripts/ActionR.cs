@@ -96,6 +96,10 @@ public class ActionR : MonoBehaviour
                 Deck.decks[reeNum].AddCard(card);
                 card = null;
                 tasks[reeNum]--;
+                if (tasks[reeNum] <= 0)
+                {
+                    Deck.decks[reeNum].SetPosCards();
+                }
             }
         }
     }
