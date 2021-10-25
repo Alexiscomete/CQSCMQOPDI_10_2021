@@ -6,6 +6,7 @@ public class ChooseCard : MonoBehaviour
     private static string[] values = {"0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Draw", "Reverse", "Skip"};
 
     public SpriteRenderer spriteR;
+    public string type = "", color = "", value = "";
 
     //private static Sprite[] sprites;
     
@@ -18,14 +19,20 @@ public class ChooseCard : MonoBehaviour
         if (n == 3)
         {
             SetSpriteByName("Wild_Draw");
+            type = "Wild";
+            value = "Draw";
         }
         else if (n == 4 || n == 6)
         {
             SetSpriteByName("Wild");
+            type = "Wild";
         }
         else
         {
-            string card = colors[ran.Next(colors.Length)] + "_" + values[ran.Next(values.Length)];
+            type = "Normal";
+            color = colors[ran.Next(colors.Length)];
+            value = values[ran.Next(values.Length)];
+            string card =  color + "_" + value;
             SetSpriteByName(card);
         }
     }

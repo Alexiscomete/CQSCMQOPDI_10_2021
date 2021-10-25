@@ -7,13 +7,15 @@ public class FollowCard : MonoBehaviour
     public GameObject follow = null;
     public float timeOffSet;
     public Vector3 velocity;
-    public bool face = false;
+    public bool face;
     public SpriteRenderer spFront;
     public SpriteRenderer spBack;
+    public ChooseCard faceOfCard;
+    public BoxCollider2D minCollider, maxCollider;
 
     void Start()
     {
-        SetFace(false);
+        SetFace(face);
         if (transform.position.x > 0)
         {
             lastCardRight = this;
