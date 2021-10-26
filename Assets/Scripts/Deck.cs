@@ -6,8 +6,6 @@ public class Deck : MonoBehaviour
     public static Deck[] decks = { null, null, null, null };
     public int deckNum;
     public List<FollowCard> fc = new List<FollowCard>();
-    public Vector3 velocity;
-
     void Start()
     {
         decks[deckNum] = this;
@@ -31,7 +29,8 @@ public class Deck : MonoBehaviour
             float currentx = 0;
             foreach (FollowCard r in fc)
             {
-                r.transform.position = Vector3.SmoothDamp(r.transform.position, transform.position + new Vector3(currentx, 0, 0), ref velocity, 0.5f);
+                r.target = transform.position + new Vector3(currentx, -1.3f, fc.Count - currentx*2);
+                r.asTarget = true;
                 r.SetFace(true);
                 currentx += 0.5f;
             }
