@@ -99,6 +99,7 @@ MonoBehaviour:
   type: 
   color: 
   value: 
+  firstCard: 0
 --- !u!1 &5989267178691125519
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +238,8 @@ MonoBehaviour:
   faceOfCard: {fileID: 5170701733380874023}
   minCollider: {fileID: 8449802087494471105}
   maxCollider: {fileID: 2167657014789040203}
+  asTarget: 0
+  target: {x: 0, y: 0, z: 0}
 --- !u!61 &8449802087494471105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -247,7 +250,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0032359958, y: 0.012943745}
@@ -273,7 +276,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.48538974, y: 0.0032358766}

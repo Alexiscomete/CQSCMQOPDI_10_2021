@@ -1822,6 +1822,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1998529507}
     m_Modifications:
+    - target: {fileID: 5170701733380874023, guid: 9217ea4aa271d7b43ba0f05547609993, type: 3}
+      propertyPath: firstCard
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5649194189822791919, guid: 9217ea4aa271d7b43ba0f05547609993, type: 3}
       propertyPath: m_Sprite
       value: 

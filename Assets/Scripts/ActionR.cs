@@ -106,7 +106,10 @@ public class ActionR : MonoBehaviour
 
     void GoToBase()
     {
-        transform.Translate((baseR.transform.position - transform.position).normalized * force * Time.fixedDeltaTime);
+        if (Distance(baseR.transform.position) > 0.2)
+        {
+            transform.Translate((baseR.transform.position - transform.position).normalized * force * Time.fixedDeltaTime);
+        }
     }
 
     void GoTo(Transform tra)

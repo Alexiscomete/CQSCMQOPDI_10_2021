@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reeNum: 0
   baseR: {fileID: 0}
-  force: 1
+  force: 1.5
   deckR: {fileID: 0}
   deckL: {fileID: 0}
   cardModel: {fileID: 8180998486358789624, guid: 9217ea4aa271d7b43ba0f05547609993, type: 3}

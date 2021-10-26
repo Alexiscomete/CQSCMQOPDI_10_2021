@@ -7,6 +7,7 @@ public class ChooseCard : MonoBehaviour
 
     public SpriteRenderer spriteR;
     public string type = "", color = "", value = "";
+    public bool firstCard;
 
     //private static Sprite[] sprites;
     
@@ -15,31 +16,37 @@ public class ChooseCard : MonoBehaviour
     {
         //sprites = Resources.LoadAll<Sprite>("./cards/");
         System.Random ran = new System.Random();
-        int n = ran.Next(12);
-        if (n == 3)
-        {
-            SetSpriteByName("Wild_Draw");
-            type = "Wild";
-            value = "Draw";
-        }
-        else if (n == 4 || n == 6)
-        {
-            SetSpriteByName("Wild");
-            type = "Wild";
-        }
-        else
+        if (firstCard)
         {
             type = "Normal";
             color = colors[ran.Next(colors.Length)];
-            value = values[ran.Next(values.Length)];
-            string card =  color + "_" + value;
+            value = values[ran.Next(values.Length-3)];
+            string card = color + "_" + value;
             SetSpriteByName(card);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        else
+        {
+            int n = ran.Next(12);
+            if (n == 3)
+            {
+                SetSpriteByName("Wild_Draw");
+                type = "Wild";
+                value = "Draw";
+            }
+            else if (n == 4 || n == 6)
+            {
+                SetSpriteByName("Wild");
+                type = "Wild";
+            }
+            else
+            {
+                type = "Normal";
+                color = colors[ran.Next(colors.Length)];
+                value = values[ran.Next(values.Length)];
+                string card = color + "_" + value;
+                SetSpriteByName(card);
+            }
+        }
         
     }
 
@@ -48,5 +55,10 @@ public class ChooseCard : MonoBehaviour
         Debug.Log(name);
         spriteR.sprite = Resources.Load<Sprite>(name);
         Resources.UnloadUnusedAssets();
+    }
+
+    public bool CanPlay()
+    {
+        return UseCard.current.faceOfCard.color == color || type == "Wild" || UseCard.current.faceOfCard.value == value;
     }
 }

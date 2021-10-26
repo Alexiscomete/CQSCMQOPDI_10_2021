@@ -2,8 +2,14 @@ using UnityEngine;
 
 public class UseCard : MonoBehaviour
 {
-    FollowCard lastCard = null;
-    public FollowCard current;
+    public FollowCard lastCard = null;
+    public static FollowCard current;
+
+    private void Start()
+    {
+        current = lastCard;
+        lastCard = null;
+    }
 
     public void PlayCard(FollowCard follow)
     {
