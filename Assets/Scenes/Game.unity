@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7c0a068dcf94b40bc69d13a786b19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: {fileID: 1788782838}
+  lastCard: {fileID: 1788782838}
 --- !u!1 &2016095885
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class FollowCard : MonoBehaviour
 {
@@ -46,6 +47,19 @@ public class FollowCard : MonoBehaviour
                 asTarget = false;
             }
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit raycastHit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out raycastHit, 100f))
+            {
+                if (raycastHit.transform != null)
+                {
+                    //Our custom method. 
+                    Console.WriteLine("e");
+                }
+            }
+        }
     }
 
     public void SetFace(bool face)
@@ -66,5 +80,13 @@ public class FollowCard : MonoBehaviour
     float Distance(Vector2 vec)
     {
         return Mathf.Sqrt(Mathf.Pow(vec.x - transform.position.x, 2) + Mathf.Pow(vec.y - transform.position.y, 2));
+    }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Console.WriteLine("e");
+        }
     }
 }

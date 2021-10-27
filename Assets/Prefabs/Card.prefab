@@ -192,8 +192,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8180998486358789627}
   - component: {fileID: 8892909353038231960}
-  - component: {fileID: 8449802087494471105}
-  - component: {fileID: 2167657014789040203}
+  - component: {fileID: 2672891058043490765}
+  - component: {fileID: 8529036826456826174}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -236,11 +236,11 @@ MonoBehaviour:
   spFront: {fileID: 5649194189822791919}
   spBack: {fileID: 2930398303877137336}
   faceOfCard: {fileID: 5170701733380874023}
-  minCollider: {fileID: 8449802087494471105}
-  maxCollider: {fileID: 2167657014789040203}
+  minCollider: {fileID: 2672891058043490765}
+  maxCollider: {fileID: 8529036826456826174}
   asTarget: 0
   target: {x: 0, y: 0, z: 0}
---- !u!61 &8449802087494471105
+--- !u!61 &2672891058043490765
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,7 +253,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0032359958, y: 0.012943745}
+  m_Offset: {x: -0.5052124, y: 0.022126079}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -264,9 +264,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2782902, y: 1.815455}
+  m_Size: {x: 0.25508857, y: 1.7965393}
   m_EdgeRadius: 0
---- !u!61 &2167657014789040203
+--- !u!61 &8529036826456826174
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,7 +279,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.48538974, y: 0.0032358766}
+  m_Offset: {x: -0.0036877394, y: 0.007375419}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -290,5 +290,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28809506, y: 1.8219267}
+  m_Size: {x: 1.2581377, y: 1.8407913}
   m_EdgeRadius: 0
