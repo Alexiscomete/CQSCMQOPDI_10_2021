@@ -6,6 +6,8 @@ public class Deck : MonoBehaviour
     public static Deck[] decks = { null, null, null, null };
     public int deckNum;
     public List<FollowCard> fc = new List<FollowCard>();
+    public Transform user;
+
     void Start()
     {
         decks[deckNum] = this;
@@ -50,5 +52,15 @@ public class Deck : MonoBehaviour
                 r.follow = gameObject;
             }
         }
+    }
+
+    float Distance(Vector2 vec)
+    {
+        return Mathf.Sqrt(Mathf.Pow(vec.x - transform.position.x, 2) + Mathf.Pow(vec.y - transform.position.y, 2));
+    }
+
+    public float UserDistance()
+    {
+        return Distance(user.position);
     }
 }

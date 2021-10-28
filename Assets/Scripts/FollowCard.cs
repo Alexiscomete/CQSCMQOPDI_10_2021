@@ -75,6 +75,10 @@ public class FollowCard : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("e");
+            if (Deck.decks[0].UserDistance() < 2)
+            {
+                
+            }
         }
     }
 }
