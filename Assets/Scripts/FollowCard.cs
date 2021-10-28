@@ -12,7 +12,7 @@ public class FollowCard : MonoBehaviour
     public SpriteRenderer spFront;
     public SpriteRenderer spBack;
     public ChooseCard faceOfCard;
-    public BoxCollider2D minCollider, maxCollider;
+    public BoxCollider2D collider;
     public bool asTarget = false;
     public Vector3 target;
 
@@ -47,19 +47,7 @@ public class FollowCard : MonoBehaviour
                 asTarget = false;
             }
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit raycastHit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out raycastHit, 100f))
-            {
-                if (raycastHit.transform != null)
-                {
-                    //Our custom method. 
-                    Console.WriteLine("e");
-                }
-            }
-        }
+        
     }
 
     public void SetFace(bool face)
@@ -82,11 +70,11 @@ public class FollowCard : MonoBehaviour
         return Mathf.Sqrt(Mathf.Pow(vec.x - transform.position.x, 2) + Mathf.Pow(vec.y - transform.position.y, 2));
     }
 
-    private void OnMouseOver()
+    void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Console.WriteLine("e");
+            Debug.Log("e");
         }
     }
 }

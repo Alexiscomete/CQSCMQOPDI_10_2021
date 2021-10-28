@@ -91,7 +91,7 @@ public class ActionR : MonoBehaviour
         else
         {
             GoTo(Deck.decks[reeNum].transform);
-            if (Distance(Deck.decks[reeNum].transform.position) < 0.5)
+            if (Distance(Deck.decks[reeNum].transform.position) < 0.7)
             {
                 Deck.decks[reeNum].AddCard(card);
                 card = null;

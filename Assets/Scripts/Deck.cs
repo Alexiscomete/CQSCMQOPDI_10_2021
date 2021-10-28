@@ -35,21 +35,11 @@ public class Deck : MonoBehaviour
                 currentx += 0.5f;
                 if (r.faceOfCard.CanPlay())
                 {
-                    if (fc.Count == currentx * 2 + 1)
-                    {
-                        r.maxCollider.enabled = true;
-                        r.minCollider.enabled = false;
-                    }
-                    else
-                    {
-                        r.minCollider.enabled = true;
-                        r.maxCollider.enabled = false;
-                    }
+                    r.collider.enabled = true;
                 }
                 else
                 {
-                    r.minCollider.enabled = false;
-                    r.maxCollider.enabled = false;
+                    r.collider.enabled = false;
                 }
             }
         }
