@@ -984,6 +984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckNum: 0
   fc: []
+  user: {fileID: 1081884394}
 --- !u!1 &1305574734
 GameObject:
   m_ObjectHideFlags: 0
