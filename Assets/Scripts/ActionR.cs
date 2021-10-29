@@ -99,6 +99,7 @@ public class ActionR : MonoBehaviour
                 if (tasks[reeNum] <= 0)
                 {
                     Deck.decks[reeNum].SetPosCards();
+                    Deck.decks[reeNum].pos = false;
                 }
             }
         }

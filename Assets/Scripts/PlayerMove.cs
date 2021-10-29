@@ -5,6 +5,7 @@ public class PlayerMove : MonoBehaviour
     bool up = false, down = false, right = false, left = false;
     public Transform rb;
     public float force;
+    public FollowCard card;
 
     // Update is called once per frame
     void Update()

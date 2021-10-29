@@ -853,6 +853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1081884394}
   force: 3.44
+  card: {fileID: 0}
 --- !u!50 &1081884396
 Rigidbody2D:
   serializedVersion: 4
@@ -984,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckNum: 0
   fc: []
-  user: {fileID: 1081884394}
+  user: {fileID: 1081884395}
 --- !u!1 &1305574734
 GameObject:
   m_ObjectHideFlags: 0

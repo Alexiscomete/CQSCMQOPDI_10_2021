@@ -6,7 +6,8 @@ public class Deck : MonoBehaviour
     public static Deck[] decks = { null, null, null, null };
     public int deckNum;
     public List<FollowCard> fc = new List<FollowCard>();
-    public Transform user;
+    public PlayerMove user;
+    public bool pos = false;
 
     void Start()
     {
@@ -15,7 +16,19 @@ public class Deck : MonoBehaviour
 
     void Update()
     {
-        
+        if (deckNum == 0)
+        {
+            if (!pos && UserDistance() < 2)
+            {
+                pos = true;
+                SetPosCards(-1f);
+            }
+            else if (pos && UserDistance() > 2)
+            {
+                pos = false;
+                SetPosCards(-1.3f);
+            }
+        }
     }
 
     public void AddCard(FollowCard fc)
@@ -26,12 +39,17 @@ public class Deck : MonoBehaviour
 
     public void SetPosCards()
     {
+        SetPosCards(-1.3f);
+    }
+
+    public void SetPosCards(float y)
+    {
         if (deckNum == 0)
         {
             float currentx = 0;
             foreach (FollowCard r in fc)
             {
-                r.target = transform.position + new Vector3(currentx, -1.3f, fc.Count - currentx*2);
+                r.target = transform.position + new Vector3(currentx, y, fc.Count - currentx * 2);
                 r.asTarget = true;
                 r.SetFace(true);
                 currentx += 0.5f;
@@ -61,6 +79,6 @@ public class Deck : MonoBehaviour
 
     public float UserDistance()
     {
-        return Distance(user.position);
+        return Distance(user.transform.position);
     }
 }

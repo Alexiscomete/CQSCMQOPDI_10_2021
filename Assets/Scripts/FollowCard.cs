@@ -74,10 +74,18 @@ public class FollowCard : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("e");
-            if (Deck.decks[0].UserDistance() < 2)
+            Deck de = Deck.decks[0];
+            if (de.UserDistance() < 2)
             {
-                
+                follow = de.user.gameObject;
+                if (de.user.card != null)
+                {
+                    de.user.card.follow = null;
+                    de.AddCard(de.user.card);
+                }
+                de.user.card = this;
+                de.fc.Remove(this);
+                de.SetPosCards(-1f);
             }
         }
     }
