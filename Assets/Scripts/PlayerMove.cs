@@ -26,6 +26,11 @@ public class PlayerMove : MonoBehaviour
         {
             left = true;
         }
+        if (Input.GetKeyDown(KeyCode.E) && Distance(UseCard.pos.transform.position) < 1 && card != null && card.faceOfCard.CanPlay())
+        {
+            UseCard.pos.PlayCard(card);
+            card = null;
+        }
     }
 
     private void FixedUpdate()
@@ -50,5 +55,10 @@ public class PlayerMove : MonoBehaviour
             rb.Translate(new Vector2(-force, 0f) * Time.fixedDeltaTime);
             left = false;
         }
+    }
+
+    float Distance(Vector2 vec)
+    {
+        return Mathf.Sqrt(Mathf.Pow(vec.x - transform.position.x, 2) + Mathf.Pow(vec.y - transform.position.y, 2));
     }
 }
