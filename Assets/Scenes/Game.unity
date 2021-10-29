@@ -206,6 +206,14 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0.9803922
       objectReference: {fileID: 0}
+    - target: {fileID: 6394945069779739522, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: num
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394945069779739522, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: force
+      value: 3.44
+      objectReference: {fileID: 0}
     - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: deckNum
       value: 2
@@ -421,6 +429,14 @@ PrefabInstance:
     - target: {fileID: 4538818762990115369, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: m_Color.g
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394945069779739522, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: num
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394945069779739522, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: force
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: deckNum
@@ -2269,6 +2285,14 @@ PrefabInstance:
     - target: {fileID: 4538818762990115369, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: m_Color.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394945069779739522, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: num
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394945069779739522, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: force
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: deckNum
