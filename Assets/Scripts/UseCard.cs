@@ -6,11 +6,15 @@ public class UseCard : MonoBehaviour
     public static FollowCard current;
     public static UseCard pos;
 
+    private void Awake()
+    {
+        pos = this;
+    }
+
     private void Start()
     {
         current = lastCard;
         lastCard = null;
-        pos = this;
     }
 
     public void PlayCard(FollowCard follow)

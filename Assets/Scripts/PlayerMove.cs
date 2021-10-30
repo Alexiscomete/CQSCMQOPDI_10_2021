@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
         {
             left = true;
         }
-        if (Input.GetKeyDown(KeyCode.E) && Distance(UseCard.pos.transform.position) < 1 && card != null && card.faceOfCard.CanPlay())
+        if (Turns.turn == 0 && Input.GetKeyDown(KeyCode.E) && Distance(UseCard.pos.transform.position) < 1 && card != null && card.faceOfCard.CanPlay())
         {
             UseCard.pos.PlayCard(card);
             card = null;

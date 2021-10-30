@@ -5,11 +5,14 @@ public class IAP : MonoBehaviour
     public int num;
     public FollowCard fc;
     public float force;
+    float lasty, lastx;
+    Vector2 nextMove = new Vector2(0, 0);
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        lastx = UseCard.pos.transform.position.x;
+        lasty = UseCard.pos.transform.position.y;
     }
 
     // Update is called once per frame
@@ -17,13 +20,22 @@ public class IAP : MonoBehaviour
     {
         if (Turns.turn != num && Turns.turn != (num + 3)%4)
         {
-
+            if (Distance(new Vector2(lastx, lasty)) < 1)
+            {
+                System.Random ran = new System.Random();
+                lastx = ran.Next(-500, 500) / 100 + UseCard.pos.transform.position.x;
+                lasty = ran.Next(-500, 500) / 100 + UseCard.pos.transform.position.y;
+            }
+            else
+            {
+                GoTo(new Vector3(lastx, lasty));
+            }
         }
-        else
+        else if (Turns.turn == num)
         {
             if (fc != null)
             {
-
+                
             }
             else
             {
@@ -33,6 +45,10 @@ public class IAP : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            GoToBase();
+        }
     }
 
     bool GoToBase()
@@ -40,19 +56,24 @@ public class IAP : MonoBehaviour
 
         if (Distance(Deck.decks[num].transform.position) > 0.5)
         {
-            transform.Translate((Deck.decks[num].transform.position - transform.position).normalized * force * Time.fixedDeltaTime);
+            nextMove = (Deck.decks[num].transform.position - transform.position).normalized * force;
             return true;
         }
         return false;
     }
 
-    void GoTo(Transform tra)
+    void GoTo(Vector3 vec)
     {
-        transform.Translate((tra.position - transform.position).normalized * force * Time.fixedDeltaTime);
+        nextMove = (vec - transform.position).normalized * force;
     }
 
     float Distance(Vector2 vec)
     {
         return Mathf.Sqrt(Mathf.Pow(vec.x - transform.position.x, 2) + Mathf.Pow(vec.y - transform.position.y, 2));
+    }
+
+    private void FixedUpdate()
+    {
+        transform.Translate(nextMove * Time.fixedDeltaTime);
     }
 }
