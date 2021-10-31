@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class IAP : MonoBehaviour
 {
@@ -35,13 +36,30 @@ public class IAP : MonoBehaviour
         {
             if (fc != null)
             {
-                
+                if (Distance(UseCard.pos.transform.position) < 0.5)
+                {
+                    UseCard.pos.PlayCard(fc);
+                    fc = null;
+                }
+                else
+                {
+                    GoTo(UseCard.pos.transform.position);
+                }
             }
             else
             {
                 if (!GoToBase())
                 {
-
+                    List<FollowCard> cards = Deck.decks[num].fc;
+                    foreach (FollowCard card in cards)
+                    {
+                        if (card.faceOfCard.CanPlay())
+                        {
+                            card.SetCard(Deck.decks[num]);
+                            fc = card;
+                            break;
+                        }
+                    }
                 }
             }
         }

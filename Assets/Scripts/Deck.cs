@@ -8,6 +8,7 @@ public class Deck : MonoBehaviour
     public List<FollowCard> fc = new List<FollowCard>();
     public PlayerMove user;
     public bool pos = false;
+    public GameObject entity;
 
     void Start()
     {

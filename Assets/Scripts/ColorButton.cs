@@ -35,6 +35,7 @@ public class ColorButton : MonoBehaviour
                 UseCard.current.faceOfCard.spriteR.color = new Color(255, 255, 0);
                 break;
         }
+        Turns.NextTurn();
         colors.SetActive(false);
     }
 }
