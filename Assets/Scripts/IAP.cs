@@ -19,53 +19,61 @@ public class IAP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Turns.turn != num && Turns.turn != (num + 3)%4)
+        if (ActionR.tasks[num] == 0 && Turns.turn == num)
         {
-            if (Distance(new Vector2(lastx, lasty)) < 1)
-            {
-                System.Random ran = new System.Random();
-                lastx = ran.Next(-500, 500) / 100 + UseCard.pos.transform.position.x;
-                lasty = ran.Next(-500, 500) / 100 + UseCard.pos.transform.position.y;
-            }
-            else
-            {
-                GoTo(new Vector3(lastx, lasty));
-            }
+            Turns.NextTurn();
+            ActionR.tasks[num] = -1;
         }
-        else if (Turns.turn == num)
+        else if (ActionR.tasks[num] == -1)
         {
-            if (fc != null)
+            if (Turns.turn != num && Turns.turn != (num + 3) % 4)
             {
-                if (Distance(UseCard.pos.transform.position) < 0.5)
+                if (Distance(new Vector2(lastx, lasty)) < 1)
                 {
-                    UseCard.pos.PlayCard(fc);
-                    fc = null;
+                    System.Random ran = new System.Random();
+                    lastx = ran.Next(-500, 500) / 100 + UseCard.pos.transform.position.x;
+                    lasty = ran.Next(-500, 500) / 100 + UseCard.pos.transform.position.y;
                 }
                 else
                 {
-                    GoTo(UseCard.pos.transform.position);
+                    GoTo(new Vector3(lastx, lasty));
                 }
             }
-            else
+            else if (Turns.turn == num)
             {
-                if (!GoToBase())
+                if (fc != null)
                 {
-                    List<FollowCard> cards = Deck.decks[num].fc;
-                    foreach (FollowCard card in cards)
+                    if (Distance(UseCard.pos.transform.position) < 0.5)
                     {
-                        if (card.faceOfCard.CanPlay())
+                        UseCard.pos.PlayCard(fc);
+                        fc = null;
+                    }
+                    else
+                    {
+                        GoTo(UseCard.pos.transform.position);
+                    }
+                }
+                else
+                {
+                    if (!GoToBase())
+                    {
+                        List<FollowCard> cards = Deck.decks[num].fc;
+                        foreach (FollowCard card in cards)
                         {
-                            card.SetCard(Deck.decks[num]);
-                            fc = card;
-                            break;
+                            if (card.faceOfCard.CanPlay())
+                            {
+                                card.SetCard(Deck.decks[num]);
+                                fc = card;
+                                break;
+                            }
                         }
                     }
                 }
             }
-        }
-        else
-        {
-            GoToBase();
+            else
+            {
+                GoToBase();
+            }
         }
     }
 

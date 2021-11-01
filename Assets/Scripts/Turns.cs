@@ -12,6 +12,10 @@ public class Turns : MonoBehaviour
 
     public static void AddCardToNext(int num)
     {
+        if (ActionR.tasks[(turn + 1) % 4] == -1)
+        {
+            num++;
+        }
         ActionR.tasks[(turn + 1) % 4] += num;
     }
 }
