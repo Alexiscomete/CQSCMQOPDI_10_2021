@@ -3,7 +3,7 @@ using UnityEngine;
 public class ChooseCard : MonoBehaviour
 {
     private static string[] colors = {"Blue", "Yellow", "Red", "Green"};
-    private static string[] values = {"0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Draw", "Reverse", "Skip"};
+    private static string[] values = {"0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Draw", "Draw", "Reverse", "Reverse", "Skip", "Skip"};
 
     public SpriteRenderer spriteR;
     public string type = "", color = "", value = "";
@@ -26,7 +26,7 @@ public class ChooseCard : MonoBehaviour
         }
         else
         {
-            int n = ran.Next(12);
+            int n = ran.Next(14);
             if (n == 3)
             {
                 SetSpriteByName("Wild_Draw");

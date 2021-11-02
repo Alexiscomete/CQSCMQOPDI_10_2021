@@ -116,7 +116,6 @@ public class Deck : MonoBehaviour
         if (y > v)
         {
             max = "y";
-            v = y;
         }
         return max;
     }
