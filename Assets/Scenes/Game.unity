@@ -215,6 +215,10 @@ PrefabInstance:
       value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: entity
+      value: 
+      objectReference: {fileID: 1675292982}
+    - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: deckNum
       value: 2
       objectReference: {fileID: 0}
@@ -438,6 +442,10 @@ PrefabInstance:
       propertyPath: force
       value: 3.44
       objectReference: {fileID: 0}
+    - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: entity
+      value: 
+      objectReference: {fileID: 807736135}
     - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: deckNum
       value: 3
@@ -800,6 +808,11 @@ Transform:
   m_Father: {fileID: 1809805691}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &807736135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6171716832696181863, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+  m_PrefabInstance: {fileID: 261079734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &857630288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1117,11 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.000015258789}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &1079094496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6171716832696181863, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+  m_PrefabInstance: {fileID: 2787518650351004019}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1081884393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1317,7 @@ MonoBehaviour:
   fc: []
   user: {fileID: 1081884395}
   pos: 0
+  entity: {fileID: 1081884393}
 --- !u!1 &1305574734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,6 +1891,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1675292982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6171716832696181863, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+  m_PrefabInstance: {fileID: 25760378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1694263949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2294,6 +2318,10 @@ PrefabInstance:
       propertyPath: force
       value: 3.44
       objectReference: {fileID: 0}
+    - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
+      propertyPath: entity
+      value: 
+      objectReference: {fileID: 1079094496}
     - target: {fileID: 8411396479510825498, guid: 6c7f3e04c89ddf044ae36122ae6172a8, type: 3}
       propertyPath: deckNum
       value: 1

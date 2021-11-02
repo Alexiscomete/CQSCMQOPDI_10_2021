@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Turns : MonoBehaviour
 {
-    public static int turn = 0;
+    public static int turn = -1;
 
     public static void NextTurn()
     {

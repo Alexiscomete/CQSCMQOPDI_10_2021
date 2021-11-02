@@ -26,10 +26,20 @@ public class PlayerMove : MonoBehaviour
         {
             left = true;
         }
-        if (Turns.turn == 0 && Input.GetKeyDown(KeyCode.E) && Distance(UseCard.pos.transform.position) < 1 && card != null && card.faceOfCard.CanPlay())
+        if (Turns.turn == 0)
         {
-            UseCard.pos.PlayCard(card);
-            card = null;
+            if (ActionR.tasks[0] > -1)
+            {
+                if (ActionR.tasks[0] == 0)
+                {
+                    Turns.NextTurn();
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && Distance(UseCard.pos.transform.position) < 1 && card != null && card.faceOfCard.CanPlay())
+            {
+                UseCard.pos.PlayCard(card);
+                card = null;
+            }
         }
     }
 

@@ -46,6 +46,10 @@ public class IAP : MonoBehaviour
                     if (Distance(UseCard.pos.transform.position) < 0.5)
                     {
                         UseCard.pos.PlayCard(fc);
+                        if (fc.faceOfCard.type == "Wild")
+                        {
+                            ColorButton.Select(Deck.decks[num].MaxColor());
+                        }
                         fc = null;
                     }
                     else

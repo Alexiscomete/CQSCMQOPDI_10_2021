@@ -9,6 +9,7 @@ public class Deck : MonoBehaviour
     public PlayerMove user;
     public bool pos = false;
     public GameObject entity;
+    int r, g, b, y;
 
     void Start()
     {
@@ -36,6 +37,21 @@ public class Deck : MonoBehaviour
     {
         fc.follow = null;
         this.fc.Add(fc);
+        switch (fc.faceOfCard.color)
+        {
+            case "r":
+                r++;
+                break;
+            case "g":
+                g++;
+                break;
+            case "b":
+                b++;
+                break;
+            case "y":
+                y++;
+                break;
+        }
     }
 
     public void SetPosCards()
@@ -81,5 +97,27 @@ public class Deck : MonoBehaviour
     public float UserDistance()
     {
         return Distance(user.transform.position);
+    }
+
+    public string MaxColor()
+    {
+        string max = "r";
+        int v = r;
+        if (g > v)
+        {
+            max = "g";
+            v = g;
+        }
+        if (b > v)
+        {
+            max = "b";
+            v = b;
+        }
+        if (y > v)
+        {
+            max = "y";
+            v = y;
+        }
+        return max;
     }
 }

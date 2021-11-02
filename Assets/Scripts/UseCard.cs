@@ -25,12 +25,15 @@ public class UseCard : MonoBehaviour
             Destroy(lastCard);
         }
         lastCard = current;
-        lastCard.transform.Translate(0, 0, 100);
+        lastCard.transform.Translate(0, 0, -100);
         current = follow;
         follow.follow = gameObject;
         if (follow.faceOfCard.type == "Wild")
         {
-            ColorButton.co.SetActive(true);
+            if (Turns.turn == 0)
+            {
+                ColorButton.co.SetActive(true);
+            }
             if (follow.faceOfCard.value == "Draw")
             {
                 Turns.AddCardToNext(4);
@@ -39,7 +42,6 @@ public class UseCard : MonoBehaviour
         else if (follow.faceOfCard.value == "Draw")
         {
             Turns.AddCardToNext(2);
-            Turns.NextTurn();
             Turns.NextTurn();
         }
         else

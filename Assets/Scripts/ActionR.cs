@@ -11,6 +11,7 @@ public class ActionR : MonoBehaviour
     FollowCard card = null;
     public GameObject cardModel;
     bool getCard = false, pos = false;
+    static int u = 4;
 
     // Update is called once per frame
     void Update()
@@ -96,10 +97,19 @@ public class ActionR : MonoBehaviour
                 Deck.decks[reeNum].AddCard(card);
                 card = null;
                 tasks[reeNum]--;
-                if (tasks[reeNum] <= 0)
+                if (tasks[reeNum] == 0)
                 {
                     Deck.decks[reeNum].SetPosCards();
                     Deck.decks[reeNum].pos = false;
+                    if (u > 0)
+                    {
+                        u--;
+                        tasks[reeNum] = -1;
+                        if (u == 0)
+                        {
+                            Turns.NextTurn();
+                        }
+                    }
                 }
             }
         }
